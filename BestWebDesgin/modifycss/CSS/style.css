@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Dancing Script');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+:root {
+    --white-color: #fff;
+    --dark-color: #222;
+    --body-bg-color: #fff;
+    --section-bg-color: #202834;
+    --navigation-item-hover-color: #3b5378;
+
+    --text-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    --box-sahdow: 0 5px 25px rgba(0 0 0 / 20%);
+
+    --scroll-bar-color: #fff;
+    --scroll-thumb-color: #282f4e;
+    --scroll-thumb-hover-color: #454f6b;
+
+
+    --united-nations-blue: hsl(214, 56%, 58%);
+  --bright-navy-blue: hsl(214, 57%, 51%);
+  --spanish-gray: hsl(0, 0%, 60%);
+  --black-coral: hsl(225, 8%, 42%);
+  --oxford-blue: hsl(208, 97%, 12%);
+  --yale-blue: hsl(214, 72%, 33%);
+  --blue-ncs: hsl(197, 100%, 36%);
+  --gunmetal: hsl(206, 34%, 20%);
+  --gainsboro: hsl(0, 0%, 88%);
+  --cultured: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --onyx: hsl(0, 0%, 25%);
+  --jet: hsl(0, 0%, 20%);
+
+  /**
+   * typography
+   */
+
+  --ff-poppins: "Poppins", sans-serif;
+  --ff-montserrat: "Montserrat", sans-serif;
+
+  --fs-1: calc(20px + 3.5vw);
+  --fs-2: calc(18px + 1.6vw);
+  --fs-3: calc(16px + 0.45vw);
+  --fs-4: 15px;
+  --fs-5: 14px;
+  --fs-6: 13px;
+  --fs-7: 12px;
+  --fs-8: 11px;
+
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+
+  /**
+   * transition
+   */
+
+  --transition: 0.25s ease-in-out;
+
+  /**
+   * spacing
+   */
+
+  --section-padding: 60px;
+
+  /**
+   * border-radius
+   */
+
+  --radius-15: 15px;
+  --radius-25: 25px;
+
+
+    --line_color : #fff ;
+    --back_color : rgba(173, 216, 230, 0.986) ;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comfortaa', cursive;
+    -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+    text-transform: capitalize;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+    -webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+body{
+    background: var(--body-bg-color);
+}
+
+hr{
+    margin: 10px;
+}
+
+section{
+    position: relative;
+    display: block;
+}
+
+.section{
+    color: var(--white-color);
+    background: var(--section-bg-color);
+    padding: 35px 200px;
+    transition: 0.3s ease;
+}
+/* ====================Home========================== */
+.home{
+    min-height: 100vh;
+}
+
+.home::before{
+    z-index: 888;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(transparent, var(--section-bg-color));
+}
+
+/* ==================Scroll bar =====================*/
+
+::-webkit-scrollbar{
+    width: 11px;
+    background: var(--scroll-bar-color);
+}
+
+::-webkit-scrollbar-thumb{
+    width: 100%;
+    background: var(--scroll-thumb-color);
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: var(--scroll-thumb-hover-color);
+}
+
+/* ------------- login ================= */
+
+.btn-head {
+    padding: 5px 20px;
+    font-size: large;
+    background: none;
+    color: #fff;
+    outline: none;
+    border-radius: 15px;
+    border: 1px solid var(--white-color);
+
+    transition: 0.5s ease;
+}
+
+.btn-head:hover{
+    background: #fff;
+    color: #162938;
+}
+
+.wrapper{
+    z-index: 9999;
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease,height .2s ease;
+
+    margin-top: 10%;
+    margin-left: 20%;
+}
+
+.wrapper.active{
+    height: 520px;
+}
+
+.wrapper.active-popup{
+    transform: scale(1);
+}
+
+.wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+}
+
+.wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login{
+   transition: none;
+   transform: translateX(-400px);
+}
+
+.wrapper .form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.form-box h2{
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0px;
+
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+
+.input-box input{
+    width: 90%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #162938;
+    font-weight: 600;
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+.remember-forgot{
+    font-size:  .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input{
+    accent-color: #162938;
+    margin-right: 3px;
+}
+
+.remember-forgot a{
+    color: #162938;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background-color: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.login-register{
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a{
+    color: #162938;
+    text-decoration: none;
+    font-weight: 900;
+    color: blue;
+    margin-left: 5px;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+

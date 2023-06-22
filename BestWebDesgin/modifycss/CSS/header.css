@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Dancing Script');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+:root {
+    --white-color: #fff;
+    --dark-color: #222;
+    --body-bg-color: #fff;
+    --section-bg-color: #202834;
+    --navigation-item-hover-color: #3b5378;
+
+    --text-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    --box-sahdow: 0 5px 25px rgba(0 0 0 / 20%);
+
+    --scroll-bar-color: #fff;
+    --scroll-thumb-color: #282f4e;
+    --scroll-thumb-hover-color: #454f6b;
+
+
+    --united-nations-blue: hsl(214, 56%, 58%);
+  --bright-navy-blue: hsl(214, 57%, 51%);
+  --spanish-gray: hsl(0, 0%, 60%);
+  --black-coral: hsl(225, 8%, 42%);
+  --oxford-blue: hsl(208, 97%, 12%);
+  --yale-blue: hsl(214, 72%, 33%);
+  --blue-ncs: hsl(197, 100%, 36%);
+  --gunmetal: hsl(206, 34%, 20%);
+  --gainsboro: hsl(0, 0%, 88%);
+  --cultured: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --onyx: hsl(0, 0%, 25%);
+  --jet: hsl(0, 0%, 20%);
+
+  /**
+   * typography
+   */
+
+  --ff-poppins: "Poppins", sans-serif;
+  --ff-montserrat: "Montserrat", sans-serif;
+
+  --fs-1: calc(20px + 3.5vw);
+  --fs-2: calc(18px + 1.6vw);
+  --fs-3: calc(16px + 0.45vw);
+  --fs-4: 15px;
+  --fs-5: 14px;
+  --fs-6: 13px;
+  --fs-7: 12px;
+  --fs-8: 11px;
+
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+
+  /**
+   * transition
+   */
+
+  --transition: 0.25s ease-in-out;
+
+  /**
+   * spacing
+   */
+
+  --section-padding: 60px;
+
+  /**
+   * border-radius
+   */
+
+  --radius-15: 15px;
+  --radius-25: 25px;
+
+
+    --line_color : #fff ;
+    --back_color : rgba(173, 216, 230, 0.986) ;
+}
+
+
+header{
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    height: calc(5em + 1rem);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+
+    transition: 0.5s ease;
+    transition-property: height, background;
+}
+
+header.sticky{
+    height: calc(2.5em + 1rem);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header .nav-bar{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 200px;
+    transition: 0.3s ease;
+}
+
+.nav-close-btn, .nav-menu-btn{
+    display: none; 
+}
+
+.nav-bar .logo{
+    color: #f9f9f9;
+    font-size: 1.8em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-shadow: var(--text-shadow);
+
+    /* ------------ nav-bar effect ----------- */
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+
+    &::before {
+        content: attr(data-item);
+        border: none;
+        transition: 0.5s;
+        color: #8254ff;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 0;
+        overflow: hidden;
+      }
+
+      &:hover {
+        &::before {
+          width: 100%;
+          transition: all 0.5s ease-in-out;
+        }
+      }
+      /* ----------- end nav-bar effect ------------- */
+}
+
+.nav-bar a img{
+    image-rendering: pixelated;
+    border-radius: 25px;
+    height: 50px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 3px white);
+}
+
+.navigation .nav-items a{
+    color: #f9f9f9;
+    font-size: 1em;
+    text-decoration: none;
+    text-shadow: var(--text-shadow);
+
+    /* ------------ nav-bar effect ----------- */
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+
+    &::before {
+        content: attr(data-item);
+        border: none;
+        transition: 0.5s;
+        color: #8254ff;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 0;
+        overflow: hidden;
+      }
+
+      &:hover {
+        &::before {
+          width: 100%;
+          transition: all 0.5s ease-in-out;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s;
+      }
+
+      &:hover {
+        color: #95a5a6;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    /* ----------- end nav-bar effect ------------- */  
+}
+
+.navigation .nav-items a i{
+    display: none;
+}
+
+.navigation .nav-items a:not(:last-child) {
+    margin-right: 45px;
+}
+
+/* -- Slides -- */
+/* -------- Home --------- */
+
+.home{
+    min-height: 100vh;
+}
+
+/* ====================== Media icons =============*/
+
+.media-icons {
+    z-index: 999;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 90px;
+}
+
+.media-icons a{
+    color: var(--white-color);
+    font-size: 1.7em;
+    margin: 10px 0;
+}
+
+/* ====================== End media icons============ */
+
+
+/* ======================== Ipad mode ================== */
+
+@media screen and (max-width: 1100px) {
+    header .nav-bar{
+        padding: 0 50px;
+    }   
+    
+    .section{
+        padding: 25px 50px;
+    }
+
+    .media-icons{
+        right: 0;
+        margin-right: 50px;
+    }
+
+    .swiper-slide .text-content{
+        margin: 0 120px 0 50px;
+    }
+
+    .bg-slides-thumbs{
+        bottom: 3em;
+    }
+
+    .home1 img{
+        width: 100%;
+        object-fit: cover;
+    }
+
+}
+
+/* ======================== mobile mode ============================== */
+
+@media screen and (max-width: 785px){
+
+    :root {
+
+        /**
+         * typography
+         */
+    
+        --fs-5: 15px;
+    
+      }
+
+    /* ============== nevigation bar menu ===================*/
+
+    .nav-menu-btn {
+        display: block;
+        color: var(--white-color);
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+
+     .nav-close-btn{
+        display: block;
+        color: var(--dark-color);
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.3em;
+        margin: 10px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    } 
+
+    .navigation{
+        z-index: 99999;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,0.25);   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+
+    .navigation.active{
+      visibility: visible;
+      opacity: 1;  
+    }
+
+    .navigation .nav-items{
+        position: relative;
+        background: var(--white-color);
+        width: 400px;
+        max-width: 400px;
+        display: grid;
+        place-content: center;
+        margin: 20px;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: var(--box-sahdow);
+        transform: translateY(-200px);
+        transition: 0.3s ease;
+    }
+
+    .navigation.active .nav-items{
+        transform: translateY(0);
+    }
+
+    .navigation .nav-items a{
+        color: var(--dark-color);
+        font-size: 1em;
+        margin: 15px 50px;
+        transition: 0.3s ease;
+    }
+
+    .navigation .nav-items a:hover{
+        color: var(--navigation-item-hover-color);
+    }
+
+    .navigation .nav-items a i{
+        display: inline-block;
+        font-size: 1.3em;
+        margin-right: 5px;
+    }
+
+    .swiper-slide .text-content .button{
+        font-size: 0.9em;
+        padding: 5px 15px;
+    }
+
+     /* ============== end nevigation bar menu ===================*/
+
+     .btn-head {
+        background: #202834;
+        color: var(--white-color);
+     }
+}

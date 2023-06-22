@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Dancing Script');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+:root {
+    --white-color: #fff;
+    --dark-color: #222;
+    --body-bg-color: #fff;
+    --section-bg-color: #202834;
+    --navigation-item-hover-color: #3b5378;
+
+    --text-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    --box-sahdow: 0 5px 25px rgba(0 0 0 / 20%);
+
+    --scroll-bar-color: #fff;
+    --scroll-thumb-color: #282f4e;
+    --scroll-thumb-hover-color: #454f6b;
+
+
+    --united-nations-blue: hsl(214, 56%, 58%);
+  --bright-navy-blue: hsl(214, 57%, 51%);
+  --spanish-gray: hsl(0, 0%, 60%);
+  --black-coral: hsl(225, 8%, 42%);
+  --oxford-blue: hsl(208, 97%, 12%);
+  --yale-blue: hsl(214, 72%, 33%);
+  --blue-ncs: hsl(197, 100%, 36%);
+  --gunmetal: hsl(206, 34%, 20%);
+  --gainsboro: hsl(0, 0%, 88%);
+  --cultured: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --onyx: hsl(0, 0%, 25%);
+  --jet: hsl(0, 0%, 20%);
+
+  /**
+   * typography
+   */
+
+  --ff-poppins: "Poppins", sans-serif;
+  --ff-montserrat: "Montserrat", sans-serif;
+
+  --fs-1: calc(20px + 3.5vw);
+  --fs-2: calc(18px + 1.6vw);
+  --fs-3: calc(16px + 0.45vw);
+  --fs-4: 15px;
+  --fs-5: 14px;
+  --fs-6: 13px;
+  --fs-7: 12px;
+  --fs-8: 11px;
+
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+
+  /**
+   * transition
+   */
+
+  --transition: 0.25s ease-in-out;
+
+  /**
+   * spacing
+   */
+
+  --section-padding: 60px;
+
+  /**
+   * border-radius
+   */
+
+  --radius-15: 15px;
+  --radius-25: 25px;
+
+
+    --line_color : #fff ;
+    --back_color : rgba(173, 216, 230, 0.986) ;
+}
+
+/*-----------------------------------*\
+ * #FOOTER
+\*-----------------------------------*/
+
+.footer-top {
+    color: var(--gainsboro);
+    display: flex;
+    justify-content: space-around;
+    background: var(--gunmetal);
+    padding-block: var(--section-padding);
+    width: 100%;   
+  }
+
+  .footer-2{
+    display: flex;
+    width: 70%;
+  }
+  
+  .footer-brand { margin-bottom: 30px; width: 50%; margin-left: 10%;}
+  
+  .footer-brand img { width: 180px; filter: drop-shadow(0 0 5px white);}
+  
+  .footer-brand .logo { margin-bottom: 20px; }
+  
+  .footer-text {
+    font-size: xx-large;
+    line-height: 1.7;
+  }
+  
+  .footer-contact { 
+    margin-left: 30%;
+    margin-bottom: 30px; 
+    width: 100%; 
+    }
+  
+  .contact-title {
+    position: relative;
+    font-family: var(--ff-montserrat);
+    font-weight: var(--fw-500);
+    margin-bottom: 30px;
+  }
+  
+  .contact-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--bright-navy-blue);
+  }
+  
+  .contact-text {
+    font-size: var(--fs-5);
+    margin-bottom: 15px;
+    max-width: 200px;
+  }
+  
+  .contact-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-item ion-icon { --ionicon-stroke-width: 40px; }
+  
+  .contact-link,
+  address {
+    font-style: normal;
+    color: var(--gainsboro);
+    font-size: var(--fs-5);
+  }
+  
+  .contact-link:is(:hover, :focus) { color: var(--white); }
+  
+  .footer-form{
+    text-align: center;
+    width: 25%;
+  }
+
+  .form-text {
+    font-size: var(--fs-5);
+    margin-bottom: 20px;
+  }
+  
+  .footer-form .input-field {
+    background: var(--white);
+    font-size: var(--fs-5);
+    padding: 15px 20px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .footer-form .btn { 
+    width: 100%; 
+    margin-top: 0px; 
+    border-radius: 20px; 
+    margin-left: 0px;
+    background: none;
+    border: 1px solid white;
+}
+  
+  .footer-bottom {
+    --gunmetal: hsl(205, 36%, 17%);
+    background: var(--gunmetal);
+    padding-block: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .copyright {
+    color: var(--gainsboro);
+    font-size: var(--fs-5);
+    margin-bottom: 10px;
+  }
+  
+  .copyright a {
+    color: inherit;
+    display: inline-block;
+  }
+  
+  .copyright a:is(:hover, :focus) { color: var(--white); }
+  
+  .footer-bottom-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 21px;
+  }
+  
+  .footer-bottom-list > li { position: relative; }
+  
+  .footer-bottom-list > li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: -10px;
+    bottom: 3px;
+    width: 1px;
+    background: hsla(0, 0%, 100%, 0.2);
+  }
+  
+  .footer-bottom-link {
+    color: var(--gainsboro);
+    font-size: var(--fs-7);
+    transition: var(--transition);
+  }
+  
+  .footer-bottom-link:is(:hover, :focus) { color: var(--white); }
+
+
+  /* ======================== Ipad mode ================== */
+
+@media screen and (max-width: 1100px) {
+    /**
+  * FOOTER
+  */
+
+  .footer-top{
+   display: block;
+   }
+
+   .footer-2{
+       width: 100%;
+   }
+
+  .footer-brand{
+   width: 50%;
+  }
+
+  .footer-contact{
+   margin-left: 25%;
+  }
+
+   .footer-form{
+   display: block;
+   width: 90%;
+   margin-left: 5%;
+   }
+
+
+
+   /*=== ========*/
+   .popular-head{
+       width: 100%;
+       margin-left: 0;
+   }  
+   
+   .popular-list{
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+   }
+
+}
+
+
+/* ==================== Mobile mode ====================== */
+
+@media screen and (max-width: 785px){
+
+    :root {
+
+        /**
+         * typography
+         */
+    
+        --fs-5: 15px;
+    
+      }    
+    /* ========= */
+    /**
+   * CTA
+   */
+
+  .cta {
+    display: block;
+    width: 100%;
+  }
+
+  .cta-content { width: 100%; }
+
+  .cta .section-text { margin-inline: 0; }
+
+  .btn-secondary {
+    margin-top: 15px;
+    border: 1px solid white;
+  }
+
+
+
+  /**
+   * FOOTER
+   */
+
+  .form-wrapper {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-2{
+    display: block;
+  }
+
+  .footer-form{
+    display: inline-block;
+  }
+
+  .footer-form .input-field { margin-bottom: 0; }
+
+  .footer-form .btn { width: 100%; margin-top: 10px;}
+  
+}

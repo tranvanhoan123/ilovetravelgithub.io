@@ -1,0 +1,943 @@
+.All-widget{
+    margin: 15px 0px;
+    background-color: #515c6f;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.widget{
+    display: flex;
+}
+.widget-nav{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    background-color: #5B42F3;
+}
+
+.widget-nav label{
+    font-weight: 600;
+}
+
+
+#btn-back-to-top{
+    align-items: center;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    border: 0;
+    border-radius: 50%;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: none;
+    font-size: 20px;
+    justify-content: center;
+    padding-bottom: 10px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    
+    height: 50px;
+    width: 50px;
+    bottom: 20px;
+    right:  20px;
+    position: fixed;
+    z-index: 1000;
+
+    box-shadow: 0 0 2px #FFF,
+    3px 2px 2px #ff5e66,
+    -3px -3px 15px #f0ecec;
+}
+
+#btn-back-to-top:active,
+#btn-back-to-top:hover {
+  outline: 0;
+}
+
+#btn-back-to-top span {
+  background-color: rgb(5, 6, 45);
+  color: aliceblue;
+  border-radius: 50%;
+  transition: 300ms;
+}
+
+#btn-back-to-top:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+#btn-back-to-top {
+    font-size: 40px;
+    min-width: 40px;
+  }
+}
+
+ /* =================== Icons music ======================== */
+
+.music{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comfortaa', cursive;
+    color: black;
+}
+.music::before, .music::after{
+    padding: 0;
+    margin: 0;
+}
+
+.music{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* min-height: 100vh; */
+    border-radius: 15px;
+    margin: 0px 15px;
+    background: rgb(287,287,287);
+}
+
+.music-container{
+    width: 350px;
+    height: 450px;
+    padding: 10px 15px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    background-image: linear-gradient(#9ce3ff 0%, #fd878d 90%);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.342);
+}
+
+.music-container i{
+    cursor: pointer;
+}
+
+.music-top-bar, .music-progress-area .song-timer,
+.controls, .music-list .music-head-list, .music-list ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.music-top-bar i{
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+.music-top-bar i:first-child{
+    margin-left: -7px;
+    font-size: 22px;
+}
+
+.music-top-bar span{
+    font-size: 10px;
+    margin-left: -3px;
+    color: #FFFFFF;
+}
+
+.music-img-area {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin-top: 15px;
+    margin-left: 82px;
+    border-radius: 50%;
+    animation: rotation 8s infinite linear;
+    box-shadow: 0 0 0 5px #FFFFFF, 0 0 2px #FFF,
+    13px 13px 20px #31313163, -10px -10px 20px #e6e6e6;
+
+}
+
+.music-img-area img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.song-details{
+    text-align: center;
+    margin: 30px 0;
+}
+.song-details p{
+    color: #FFFFFF;
+}
+
+.song-details .music-name{
+    font-size: 21px;
+}
+
+.song-details .music-artist{
+    font-size: 15px;
+    opacity: 0.9;
+    line-height: 35px;
+}
+
+.music-progress-area {
+    height: 6px;
+    width: 100%;
+    border-radius: 50%;
+    background: #f0f0f081;
+    cursor: pointer;
+}
+
+.music-progress-area .music-progress-bar{
+    height: inherit;
+    width: 0%;
+    position: relative;
+    border-radius: inherit;
+    background: #FFFFFF;
+}
+.music-progress-bar::before{
+    content: '';
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    top: 50%;
+    right: -5px;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+    background: inherit;
+    transition: opacity 0.2s ease;
+}
+.music-progress-area:hover .music-progress-bar::before{
+    opacity: 1;
+    pointer-events: auto;
+}
+.music-progress-area .song-timer{
+    margin-top: 2px;
+}
+.song-timer span{
+    font-size: 13px;
+    color: #FFFFFF;
+}
+.controls{
+    margin: 20px 0 5px 0;
+}
+.controls i{
+    font-size: 28px;
+    user-select: none;
+    background: #FFFFFF;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+}
+.controls i:nth-child(2),
+.controls i:nth-child(4){
+    font-size: 42px;
+}
+.controls #prev{
+    margin-right: -13px;
+    font-size: 38px;
+}
+.controls #next{
+    margin-left: -13px;
+    font-size: 38px;
+}
+.controls .play-pause{
+    height: 54px;
+    width: 54px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #FFF,
+                8px 8px 8px #ff5e66,
+                -3px -3px 15px #f0ecec;
+}
+
+.play-pause::before{
+    position: absolute;
+    content: '';
+    height: 43px;
+    width: 43px;
+    background: transparent;
+    border: 3px solid #FFFFFF;
+    border-radius: inherit;
+}
+.prev , .next{
+    box-shadow: 0 0 2px #FFF,
+                8px 8px 8px #ff5e66,
+                -3px -3px 15px #f0ecec;
+    border-radius: 50%;
+}
+
+.music-list{
+    position: absolute;
+    width: 100%;
+    bottom: -50%;
+    left: 0;
+    background: white;
+    box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
+    pointer-events: none;
+    z-index: 5;
+    padding: 15px 30px;
+    border-radius: 15px;
+    background: 
+    linear-gradient(rgba(255,255,255, 0.973), transparent),
+    linear-gradient(to top left,rgba(255,23,23), transparent),
+    linear-gradient(to top right,rgba(0,183,255), transparent);
+    background-blend-mode: screen;
+    transition: all 0.15s ease-in-out;
+}
+.music-list.show{
+   bottom: 0;
+   opacity: 1;
+   pointer-events: auto; 
+}
+.music-head-list .row{
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    color: #515c6f;
+}
+.music-list ul{
+    margin-top: 10px 0;
+    max-width: 260px;
+    overflow: auto;
+}
+
+.music-list ul li{
+    list-style: none;
+    display: flex;
+    cursor: pointer;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    color: #000000;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.music-list ul li:last-child{
+    border-bottom: 0px;
+}
+
+.music-list ul li .row span{
+    font-size: 17px;
+}
+
+.music-list ul li .row p{
+    opacity: 0.6;
+}
+
+ul li .audio-duration{
+    font-size: 16px;
+}
+
+.music-head-list .row i{
+    cursor: default;
+}
+.music-head-list .row span{
+    margin-left: 5px;
+}
+.music-head-list #close{
+    font-size: 22px;
+    color: #515c6f;
+}
+
+.music-list ul::-webkit-scrollbar{
+    width: 0;
+}
+.music-list ul li:hover{
+    color: #0e9fff;
+}
+ul li.playing{
+    pointer-events: none;
+    color: #0e9fff;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/* ================= template new =================== */
+
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cont {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
+            width: 100%;
+            background-color: #00000039;
+    height: 70vh;
+    border-radius: 100px;
+    /* background-image: -webkit-gradient(linear, right top, left bottom, from(#F2E3C6), to(#A7A1A5));
+    background-image: linear-gradient(to left bottom, #F2E3C6 0%, #A7A1A5 100%); */
+    overflow: hidden;
+  }
+  
+  .app {
+    position: relative;
+    min-width: 850px;
+    height: 540px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+  .app__bgimg {
+    position: absolute;
+    top: 0;
+    left: -2.5%;
+    width: 105%;
+    height: 100%;
+    -webkit-transition: -webkit-transform 3.5s 770ms;
+    transition: -webkit-transform 3.5s 770ms;
+    transition: transform 3.5s 770ms;
+    transition: transform 3.5s 770ms, -webkit-transform 3.5s 770ms;
+  }
+  .app__bgimg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .app__bgimg-image--1 {
+    background: url("https://kenhdiaoc24h.com/wp-content/uploads/2022/12/tong-the-nhin-tu-duong-chinh-01-2.jpg") center center no-repeat;
+    filter: drop-shadow(0 0 5px blue);
+    image-rendering: pixelated;
+    background-size: cover;
+  }
+  .app__bgimg-image--2 {
+    background: url("https://images2.thanhnien.vn/Uploaded/trongnth/2021_10_08/tu-bo-di-tich-binh-dinh-4-8851.jpeg") center center no-repeat;
+    background-size: cover;
+    opacity: 0;
+    -webkit-transition: opacity 0ms 1300ms;
+    transition: opacity 0ms 1300ms;
+    will-change: opacity;
+  }
+  .app__text {
+    position: absolute;
+    right: 165px;
+    top: 150px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+  .app__text-line {
+    -webkit-transition: opacity 750ms 500ms, -webkit-transform 1500ms 400ms;
+    transition: opacity 750ms 500ms, -webkit-transform 1500ms 400ms;
+    transition: transform 1500ms 400ms, opacity 750ms 500ms;
+    transition: transform 1500ms 400ms, opacity 750ms 500ms, -webkit-transform 1500ms 400ms;
+    will-change: transform, opacity;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  .app__text-line--4 {
+    -webkit-transition: opacity 1500ms 1500ms, -webkit-transform 1500ms 1500ms;
+    transition: opacity 1500ms 1500ms, -webkit-transform 1500ms 1500ms;
+    transition: transform 1500ms 1500ms, opacity 1500ms 1500ms;
+    transition: transform 1500ms 1500ms, opacity 1500ms 1500ms, -webkit-transform 1500ms 1500ms;
+  }
+  .app__text-line--3 {
+    -webkit-transition: opacity 1500ms 1750ms, -webkit-transform 1500ms 1600ms;
+    transition: opacity 1500ms 1750ms, -webkit-transform 1500ms 1600ms;
+    transition: transform 1500ms 1600ms, opacity 1500ms 1750ms;
+    transition: transform 1500ms 1600ms, opacity 1500ms 1750ms, -webkit-transform 1500ms 1600ms;
+  }
+  .app__text-line--2 {
+    -webkit-transition: opacity 1500ms 2000ms, -webkit-transform 1500ms 1700ms;
+    transition: opacity 1500ms 2000ms, -webkit-transform 1500ms 1700ms;
+    transition: transform 1500ms 1700ms, opacity 1500ms 2000ms;
+    transition: transform 1500ms 1700ms, opacity 1500ms 2000ms, -webkit-transform 1500ms 1700ms;
+  }
+  .app__text-line--1 {
+    -webkit-transition: opacity 1500ms 2250ms, -webkit-transform 1500ms 1800ms;
+    transition: opacity 1500ms 2250ms, -webkit-transform 1500ms 1800ms;
+    transition: transform 1500ms 1800ms, opacity 1500ms 2250ms;
+    transition: transform 1500ms 1800ms, opacity 1500ms 2250ms, -webkit-transform 1500ms 1800ms;
+  }
+  .app__text-line--4 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #0A101D;
+  }
+  .app__text-line--3 {
+    font-size: 40px;
+    font-weight: 300;
+  }
+  .app__text-line--2 {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0099CC;
+  }
+  .app__text-line--1 {
+    margin-top: 15px;
+  }
+  .app__text-line--1 img {
+    width: 50px;
+  }
+  .app__text--1 .app__text-line {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    opacity: 0;
+  }
+  .app__text--2 {
+    right: initial;
+    top: 250px;
+    left: 80px;
+    z-index: -1;
+    -webkit-transition: z-index 1500ms;
+    transition: z-index 1500ms;
+  }
+  .app__text--2 .app__text-line--4 {
+    opacity: 0;
+    -webkit-transition: opacity 400ms 125ms, -webkit-transform 1500ms -75ms;
+    transition: opacity 400ms 125ms, -webkit-transform 1500ms -75ms;
+    transition: transform 1500ms -75ms, opacity 400ms 125ms;
+    transition: transform 1500ms -75ms, opacity 400ms 125ms, -webkit-transform 1500ms -75ms;
+  }
+  .app__text--2 .app__text-line--3 {
+    opacity: 0;
+    -webkit-transition: opacity 400ms 200ms, -webkit-transform 1500ms 0ms;
+    transition: opacity 400ms 200ms, -webkit-transform 1500ms 0ms;
+    transition: transform 1500ms 0ms, opacity 400ms 200ms;
+    transition: transform 1500ms 0ms, opacity 400ms 200ms, -webkit-transform 1500ms 0ms;
+  }
+  .app__text--2 .app__text-line--2 {
+    opacity: 0;
+    -webkit-transition: opacity 400ms 275ms, -webkit-transform 1500ms 75ms;
+    transition: opacity 400ms 275ms, -webkit-transform 1500ms 75ms;
+    transition: transform 1500ms 75ms, opacity 400ms 275ms;
+    transition: transform 1500ms 75ms, opacity 400ms 275ms, -webkit-transform 1500ms 75ms;
+  }
+  .app__text--2 .app__text-line--1 {
+    opacity: 0;
+    -webkit-transition: opacity 400ms 350ms, -webkit-transform 1500ms 150ms;
+    transition: opacity 400ms 350ms, -webkit-transform 1500ms 150ms;
+    transition: transform 1500ms 150ms, opacity 400ms 350ms;
+    transition: transform 1500ms 150ms, opacity 400ms 350ms, -webkit-transform 1500ms 150ms;
+  }
+  .app__img {
+    position: absolute;
+    -webkit-transform: translate3d(0, -750px, 0);
+            transform: translate3d(0, -750px, 0);
+    width: 850px;
+    height: 100%;
+    -webkit-transition: -webkit-transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    transition: -webkit-transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    transition: transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    transition: transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02), -webkit-transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    will-change: transform;
+  }
+  .app__img img {
+    min-width: 100%;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  
+  .initial .app__img {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .initial .app__text--1 .app__text-line--1 {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: opacity 400ms 1600ms, -webkit-transform 1500ms 1400ms;
+    transition: opacity 400ms 1600ms, -webkit-transform 1500ms 1400ms;
+    transition: transform 1500ms 1400ms, opacity 400ms 1600ms;
+    transition: transform 1500ms 1400ms, opacity 400ms 1600ms, -webkit-transform 1500ms 1400ms;
+    opacity: 1;
+  }
+  .initial .app__text--1 .app__text-line--2 {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: opacity 400ms 1675ms, -webkit-transform 1500ms 1475ms;
+    transition: opacity 400ms 1675ms, -webkit-transform 1500ms 1475ms;
+    transition: transform 1500ms 1475ms, opacity 400ms 1675ms;
+    transition: transform 1500ms 1475ms, opacity 400ms 1675ms, -webkit-transform 1500ms 1475ms;
+    opacity: 1;
+  }
+  .initial .app__text--1 .app__text-line--3 {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: opacity 400ms 1750ms, -webkit-transform 1500ms 1550ms;
+    transition: opacity 400ms 1750ms, -webkit-transform 1500ms 1550ms;
+    transition: transform 1500ms 1550ms, opacity 400ms 1750ms;
+    transition: transform 1500ms 1550ms, opacity 400ms 1750ms, -webkit-transform 1500ms 1550ms;
+    opacity: 1;
+  }
+  .initial .app__text--1 .app__text-line--4 {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: opacity 400ms 1825ms, -webkit-transform 1500ms 1625ms;
+    transition: opacity 400ms 1825ms, -webkit-transform 1500ms 1625ms;
+    transition: transform 1500ms 1625ms, opacity 400ms 1825ms;
+    transition: transform 1500ms 1625ms, opacity 400ms 1825ms, -webkit-transform 1500ms 1625ms;
+    opacity: 1;
+  }
+  
+  .active .app__bgimg {
+    -webkit-transform: translate3d(10px, 0, 0) scale(1.05);
+            transform: translate3d(10px, 0, 0) scale(1.05);
+    -webkit-transition: -webkit-transform 5s 850ms ease-in-out;
+    transition: -webkit-transform 5s 850ms ease-in-out;
+    transition: transform 5s 850ms ease-in-out;
+    transition: transform 5s 850ms ease-in-out, -webkit-transform 5s 850ms ease-in-out;
+  }
+  .active .app__bgimg .app__bgimg-image--2 {
+    opacity: 1;
+    -webkit-transition: opacity 0ms 1500ms;
+    transition: opacity 0ms 1500ms;
+  }
+  .active .app__img {
+    -webkit-transition: -webkit-transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    transition: -webkit-transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    transition: transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    transition: transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02), -webkit-transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    -webkit-transform: translate3d(0, -1410px, 0);
+            transform: translate3d(0, -1410px, 0);
+  }
+  .active .app__text--1 {
+    z-index: -1;
+    -webkit-transition: z-index 0ms 1500ms;
+    transition: z-index 0ms 1500ms;
+  }
+  .active .app__text--1 .app__text-line--1 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 400ms 500ms, -webkit-transform 1500ms 300ms;
+    transition: opacity 400ms 500ms, -webkit-transform 1500ms 300ms;
+    transition: transform 1500ms 300ms, opacity 400ms 500ms;
+    transition: transform 1500ms 300ms, opacity 400ms 500ms, -webkit-transform 1500ms 300ms;
+    opacity: 0;
+  }
+  .active .app__text--1 .app__text-line--2 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 400ms 575ms, -webkit-transform 1500ms 375ms;
+    transition: opacity 400ms 575ms, -webkit-transform 1500ms 375ms;
+    transition: transform 1500ms 375ms, opacity 400ms 575ms;
+    transition: transform 1500ms 375ms, opacity 400ms 575ms, -webkit-transform 1500ms 375ms;
+    opacity: 0;
+  }
+  .active .app__text--1 .app__text-line--3 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 400ms 650ms, -webkit-transform 1500ms 450ms;
+    transition: opacity 400ms 650ms, -webkit-transform 1500ms 450ms;
+    transition: transform 1500ms 450ms, opacity 400ms 650ms;
+    transition: transform 1500ms 450ms, opacity 400ms 650ms, -webkit-transform 1500ms 450ms;
+    opacity: 0;
+  }
+  .active .app__text--1 .app__text-line--4 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 400ms 725ms, -webkit-transform 1500ms 525ms;
+    transition: opacity 400ms 725ms, -webkit-transform 1500ms 525ms;
+    transition: transform 1500ms 525ms, opacity 400ms 725ms;
+    transition: transform 1500ms 525ms, opacity 400ms 725ms, -webkit-transform 1500ms 525ms;
+    opacity: 0;
+  }
+  .active .app__text--2 {
+    z-index: 1;
+  }
+  .active .app__text--2 .app__text-line--1 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 1300ms 1300ms, -webkit-transform 2500ms 1100ms;
+    transition: opacity 1300ms 1300ms, -webkit-transform 2500ms 1100ms;
+    transition: transform 2500ms 1100ms, opacity 1300ms 1300ms;
+    transition: transform 2500ms 1100ms, opacity 1300ms 1300ms, -webkit-transform 2500ms 1100ms;
+    opacity: 1;
+  }
+  .active .app__text--2 .app__text-line--2 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 1300ms 1575ms, -webkit-transform 2500ms 1175ms;
+    transition: opacity 1300ms 1575ms, -webkit-transform 2500ms 1175ms;
+    transition: transform 2500ms 1175ms, opacity 1300ms 1575ms;
+    transition: transform 2500ms 1175ms, opacity 1300ms 1575ms, -webkit-transform 2500ms 1175ms;
+    opacity: 1;
+  }
+  .active .app__text--2 .app__text-line--3 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 1300ms 1850ms, -webkit-transform 2500ms 1250ms;
+    transition: opacity 1300ms 1850ms, -webkit-transform 2500ms 1250ms;
+    transition: transform 2500ms 1250ms, opacity 1300ms 1850ms;
+    transition: transform 2500ms 1250ms, opacity 1300ms 1850ms, -webkit-transform 2500ms 1250ms;
+    opacity: 1;
+  }
+  .active .app__text--2 .app__text-line--4 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 1300ms 2125ms, -webkit-transform 2500ms 1325ms;
+    transition: opacity 1300ms 2125ms, -webkit-transform 2500ms 1325ms;
+    transition: transform 2500ms 1325ms, opacity 1300ms 2125ms;
+    transition: transform 2500ms 1325ms, opacity 1300ms 2125ms, -webkit-transform 2500ms 1325ms;
+    opacity: 1;
+  }
+  
+  .mouse {
+    position: relative;
+    margin-right: 20px;
+    min-width: 50px;
+    height: 80px;
+    border-radius: 30px;
+    border: 5px solid rgba(255, 255, 255, 0.8);
+  }
+  .mouse:after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-animation: scroll 1s infinite alternate;
+            animation: scroll 1s infinite alternate;
+  }
+  @-webkit-keyframes scroll {
+    100% {
+      -webkit-transform: translate(-50%, 15px);
+              transform: translate(-50%, 15px);
+    }
+  }
+  @keyframes scroll {
+    100% {
+      -webkit-transform: translate(-50%, 15px);
+              transform: translate(-50%, 15px);
+    }
+  }
+  .pages {
+    margin-left: 20px;
+  }
+  .pages__list {
+    list-style-type: none;
+  }
+  .pages__item {
+    position: relative;
+    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    cursor: pointer;
+  }
+  .pages__item:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(0, 0);
+            transform: translate(-50%, -50%) scale(0, 0);
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0;
+    -webkit-transition: 500ms;
+    transition: 500ms;
+  }
+  .pages__item:hover:after {
+    -webkit-transform: translate(-50%, -50%) scale(1, 1);
+            transform: translate(-50%, -50%) scale(1, 1);
+    opacity: 1;
+  }
+  
+  .page__item-active:after {
+    -webkit-transform: translate(-50%, -50%) scale(1, 1);
+            transform: translate(-50%, -50%) scale(1, 1);
+    opacity: 1;
+  }
+  
+  .icon-link {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    width: 50px;
+  }
+  .icon-link img {
+    width: 100%;
+    vertical-align: top;
+  }
+  .icon-link--twitter {
+    left: auto;
+    right: 5px;
+  }
+
+  /* ========= Food ================= */
+
+  .food-head{
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  .food-head .section-subtitle{
+    color: #0e9fff;
+    font-size: x-large;
+  }
+
+  .food-head .section-title{
+    text-shadow: 2px 2px 6px lightskyblue;
+  }
+  
+  :root{
+    --background-dark: #2d3548;
+    --text-light: rgba(255,255,255,0.6);
+    --text-lighter: rgba(255,255,255,0.9);
+    --spacing-s: 8px;
+    --spacing-m: 16px;
+    --spacing-l: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 64px;
+    --width-container: 1200px;
+  } 
+  
+  .hero-section{
+    align-items: flex-start;
+    display: flex;
+    min-height: 100%;
+    justify-content: center;
+    padding: var(--spacing-xxl) var(--spacing-l);
+  }
+  
+  .card-grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: var(--spacing-l);
+    grid-row-gap: var(--spacing-l);
+    max-width: var(--width-container);
+    width: 100%;
+    /* column-count: 1; */
+  }
+  
+  @media(min-width: 540px){
+    .card-grid{
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+  
+  @media(min-width: 960px){
+    .card-grid{
+      grid-template-columns: repeat(4, 1fr); 
+    }
+  }
+  
+  .card{
+    list-style: none;
+    position: relative;
+  }
+  
+  .card:before{
+    content: '';
+    display: block;
+    padding-bottom: 150%;
+    width: 100%;
+  }
+  
+  .card__background{
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--spacing-l);
+    bottom: 0;
+    filter: brightness(0.75) saturate(1.2) contrast(0.85);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: center;
+    transform: scale(1) translateZ(0);
+    transition: 
+      filter 200ms linear,
+      transform 200ms linear;
+  }
+  
+  .card:hover .card__background{
+    transform: scale(1.05) translateZ(0);
+  }
+  
+  .card-grid:hover > .card:not(:hover) .card__background{
+    filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+  }
+  
+  .card__content{
+    left: 0;
+    padding: var(--spacing-l);
+    position: absolute;
+    top: 0;
+  }
+  
+  .card__category{
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-s);
+    text-transform: uppercase;
+  }
+  
+  .card__heading{
+    color: var(--text-lighter);
+    font-size: 1.9rem;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+    line-height: 1.4;
+    word-spacing: 100vw;
+  }
+/* ============================== */
+@media screen and (max-width: 785px){
+    .widget{
+        display: block;
+    }
+
+    .tomorrow{
+        width: 100%;
+    }
+
+    .music-img-area{
+      margin-left: 22%;
+    }
+
+    .music-container{
+      height: auto;
+    }
+
+    .aqi-indicator__root--ucJ5{
+        display: none;
+    }
+    [data-theme=light] .aqi-mini-widget__root--mIPT {
+        height: 270px;
+    }
+
+    .app__text--1{
+      margin-right: 30px;
+    }
+
+    .app__text--2{
+      margin-left: 160px;
+      text-shadow: 2px 2px 4px#FFF;
+    }
+}
+/* ================================= */
+  
